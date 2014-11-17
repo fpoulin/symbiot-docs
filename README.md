@@ -8,13 +8,13 @@ Documentation for the [Json Shapeshifter](https://github.com/fpoulin/json-shapes
 
 ### Prerequisites
 
-  - Make sure [Node.js][node] is installed and in your `PATH`
+  - Make sure [Node.js][http://nodejs.org/] is installed and in your `PATH`
   - Install Grunt: `npm install -g grunt-cli`
 
 ### Installation
 
   1. Checkout sources
-  2. Open the folder: `cd apidoc-seed`
+  2. Open the folder: `cd json-shapeshifter-docs`
   3. Install dependencies: `npm install`
   4. Run the dev server: `grunt dev`
   5. Open a browser at [`http://localhost:7000/`](http://localhost:7000/)
