@@ -1,8 +1,8 @@
 {
-	"name": "apidoc-seed",
-	"version": "0.0.1",
-	"description": "An API documentation project using Grunt, Metalsmith and RAML.",
-	"author": "Lotaris SA",
+	"name": "json-shapeshifter",
+	"version": "0.1.0",
+	"description": "Tools to play with Json to Json transformations (and much much more).",
+	"author": "Florian Poulin",
 	"devDependencies": {
 		"async": "^0.9.0",
 		"coffee-script": "^1.7.1",
