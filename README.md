@@ -2,13 +2,13 @@
 
 Documentation for the [Json Shapeshifter](https://github.com/fpoulin/json-shapeshifter) and [Json Shapeshifter Server](https://github.com/fpoulin/json-shapeshifter-server) projects.
 
---> [Live Site](https://fpoulin.github.com/json-shapeshifter-docs)
+:fast_forward: **[Live Site](https://fpoulin.github.com/json-shapeshifter-docs)** :rewind:
 
 ## Quickstart
 
 ### Prerequisites
 
-  - Make sure [Node.js][http://nodejs.org/] is installed and in your `PATH`
+  - Make sure [Node.js](http://nodejs.org/) is installed and in your `PATH`
   - Install Grunt: `npm install -g grunt-cli`
 
 ### Installation
