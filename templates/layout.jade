@@ -14,6 +14,15 @@ html
 			link(rel="stylesheet", href="/css/highlight.github.min.css")
 
 	body
+		
+		.header
+			.container
+				h1 
+					span.glyphicon.glyphicon-shopping-cart.rand
+					span.glyphicon.glyphicon-random
+					span.glyphicon.glyphicon-tree-conifer.rand
+					| Json-Shapeshifter
+
 
 		nav.navbar.navbar-default(role="navigation")
 			.container
@@ -23,7 +32,6 @@ html
 						span.icon-bar
 						span.icon-bar
 						span.icon-bar
-					a.navbar-brand(href='/') Json ShapeShifter
 
 				#navbarcollapse.collapse.navbar-collapse
 					ul.nav.navbar-nav
@@ -59,7 +67,7 @@ html
 		.footer
 			.container
 				p 
-					a(href="https://github.com/lotaris/apidoc-seed")=name
+					a(href="https://github.com/fpoulin/json-shapeshifter-docs")=name
 					| &nbsp;- #{description}
 				p Version: #{version}  |  Built #{creationDate}
 
