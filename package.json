@@ -1,7 +1,7 @@
 {
-	"name": "json-shapeshifter",
+	"name": "symbiot-docs",
 	"version": "0.1.0",
-	"description": "Tools to play with Json to Json transformations (and much much more).",
+	"description": "A simple Internet of Things service that runs on your machine.",
 	"author": "Florian Poulin",
 	"devDependencies": {
 		"async": "^0.9.0",

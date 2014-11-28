@@ -1,8 +1,8 @@
 ---
-title: Library
-sectionName: Library
+title: Json-Shapeshifter
+sectionName: Json-Shapeshifter
 template: layout.jade
-menuIndex: 2
+menuIndex: 3
 ---
 
 This is the documentation for the **Json-Shapeshifter Library**.

@@ -1,14 +1,14 @@
 ---
 title: Overview
-sectionName: Server
+sectionName: Symbiot
 template: api.jade
-menuIndex: 3
+menuIndex: 2
 ---
 
-This is the documentation for the **Json-Shapeshifter Server**.
+This is the documentation for the **Symbiot** application.
 
 On the right, you will get access to the API documentation.
 
-In the meantime, check the [Project on Github](https://github.com/fpoulin/json-shapeshifter-server).
+In the meantime, check the [Project on Github](https://github.com/fpoulin/symbiot).
 
 Enjoy!
