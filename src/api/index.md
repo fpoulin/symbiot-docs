@@ -1,11 +1,12 @@
 ---
 title: Overview
-sectionName: Symbiot
+sectionName: Technical Docs
 template: api.jade
-menuIndex: 2
+menuIndex: 4
+subsectionIndex: 1
 ---
 
-This is the documentation for the **Symbiot** application.
+This is the technical documentation for the **Symbiot** application.
 
 On the right, you will get access to the API documentation.
 
