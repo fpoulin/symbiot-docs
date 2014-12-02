@@ -2,7 +2,7 @@
 
 Documentation for the [Symbiot](https://github.com/fpoulin/symbiot) project.
 
-:fast_forward:  **[Live Site](https://fpoulin.github.com/symbiot-docs)**  :rewind:
+:fast_forward:  **[Live Site](http://coding.alsocan.la/)**  :rewind:
 
 ## Quickstart
 
