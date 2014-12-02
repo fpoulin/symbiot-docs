@@ -35,6 +35,8 @@ Symbiot needs a toaster **driver** to receive information from that _thing_ ("yo
 
 Note that **drivers** are part of your Symbiot installation; you cannot create them from the Web UI. Elementary ones are provided directly with the official releases, and more exotic ones will be downloadable separately and most of the time installable with a simple copy-paste (as a plugin).
 
+For more information, see [Understanding drivers](guides/understanding-drivers/).
+
 ### Input
 
 An **input** is an entry point to Symbiot for a given driver. While a driver enables the interactions with a _thing_, **inputs** actually open a data flow to it, with a given configuration. **Inputs** generate traffic! And yes, you guessed it right (you genius), this traffic can be directed to a stream.
