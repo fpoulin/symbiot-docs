@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><title>Understanding drivers</title><meta charset="utf8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A simple Internet of Things service that runs on your machine."><link rel="stylesheet" href="/css/global.css"></head><body><a href="https://github.com/fpoulin/symbiot-docs" class="github-ribbon"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a><div class="header"><div class="container"><h1><span class="glyphicon glyphicon-minus rand"></span><span class="glyphicon glyphicon-random"></span><span class="glyphicon glyphicon-minus rand"></span>Symbiot</h1></div></div><nav role="navigation" class="navbar navbar-default"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#navbarcollapse" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div><div id="navbarcollapse" class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li class="active"><a href="/guides">User Guides</a></li><li><a href="/drivers">Drivers</a></li><li><a href="/api">Technical Docs</a></li><li><a href="/faq">FAQ</a></li></ul></div></div></nav><div class="container"><div class="row"><div class="col-sm-3 col-sm-push-9"><h1>Sections</h1><hr><ul class="nav subnav"><li><a href="/guides">Overview</a></li><li class="active"><a href="/guides/understanding-drivers">Understanding drivers</a></li></ul></div><div class="col-sm-9 col-sm-pull-3"><a id="top"></a><h1>Understanding drivers</h1><hr><div><p>A driver describes all the possible data between Symbiot and a <em>thing</em>. It is a composition of <strong>data collectors</strong> and <strong>output providers</strong>.</p>
+<p>An <strong>input collector</strong> is a component of a driver responsible for handling the data flow from the <em>thing</em> to Symbiot. A driver may define zero, one or more input collectors, depending on the <em>thing</em> it is integrating with. For instance, a driver for a weather station may define one which fetches all the metrics of the station every 10 minutes and another one which raises an alert when the temperature climbs over a given threshold. A driver for your air conditioning system on the other hand might not define any input collector because it does not emit any data.</p>
+<p>An <strong>output provider</strong> is a component of a driver responsible for handling the data flow from Symbiot to the <em>thing</em>. A driver may define zero, one or more output providers, depending on the <em>thing</em> it is integrating with. For instance, a driver for your air conditioning system may define one to set the expected temperature. A Facebook driver may provide a few for posting, poking, liking, sharing or anything showing your awesomeness to the world.</p>
+<p>In the simplest (and rather common) cases, writing a driver does not require you to write any code: all you need is to write a Json descriptor. For more advanced use cases you may need to write a bit of code, but you do that outside of Symbiot in the programming language of your choice (we’ll get to that later). A descriptor looks like this:</p>
+<pre><code>{
+  <span class="hljs-string">"id"</span> : <span class="hljs-string">"my-unique-driver-id"</span>,
+  <span class="hljs-string">"name"</span> : <span class="hljs-string">"My Driver"</span>,
+  <span class="hljs-string">"description"</span> : <span class="hljs-string">"An example of driver"</span>,
+  <span class="hljs-string">"version"</span> : <span class="hljs-string">"0.1.0"</span>,
+  <span class="hljs-string">"inputCollectors"</span>: [ {<span class="hljs-keyword">...</span>}, {<span class="hljs-keyword">...</span>}, {<span class="hljs-keyword">...</span>} ],
+  <span class="hljs-string">"outputProviders"</span>: [ {<span class="hljs-keyword">...</span>}, {<span class="hljs-keyword">...</span>}, {<span class="hljs-keyword">...</span>} ]
+}
+</code></pre><p>Name it the way you want (with a <code>.json</code> extension) and place it in a <code>drivers</code> folder next to your Symbiot Jar file.</p>
+<h3 id="input-collector">Input collector</h3>
+<p>There are different ways to send data to Symbiot. Depending on the communication capabilities of the <em>thing</em> the driver is written for or the programming language you want to use for the driver implementation, you will privilege one or the other integration model.</p>
+<h4 id="api-push-collector">API Push Collector</h4>
+<p>Json payloads will be pushed from the <em>thing</em> (or an intermediate process) to the Symbiot API on <code>/inputs/{inputId}</code>. This assumes that the original source of events (ex: a toaster) has configurable webhooks or is under the control of the driver developer (ex: the developer has developed a toaster driver in <code>Node.js</code> which interacts somehow with the toaster and posts Json payloads to the Symbiot API).</p>
+<p>This is how to define an API push collector in Json:</p>
+<pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"apiPushCollector"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"My input collector"</span></span>,
+  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"This collector accepts incoming data on the Symbiot API"</span></span>,
+  "<span class="hljs-attribute">schema</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">someString</span>" : <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[<span class="hljs-string">"someString"</span>]
+  </span>}
+</span>}
+</code></pre><p>The <code>schema</code> node is a <a href="http://spacetelescope.github.io/understanding-json-schema/">Json Schema</a> describing the format of the data which will be posted on the API endpoint. It is very important since the very core of Symbiot relies on this data definition to help you build streams from an input to an output. That’s where you have a bit of job to do: you have to formalize the format of your incoming data (or at least the part that is of interest for you) in a Json Schema. The above example describes a Json payload containing a single string node called “someString” (an example of valid payload would be <code>{ &quot;someString&quot; : &quot;hello world&quot; }</code>).</p>
+<p>Later on, when you will create inputs for this input collector in the Symbiot UI, you will be asked to provide the <code>inputId</code> which determines the endpoint where payloads need to be posted (<code>/inputs/{inputId}</code>).</p>
+<h4 id="api-pull-collector">API Pull Collector</h4>
+<p>Symbiot does a regular polling on an external API to fetch valid Json payloads. This assumes that the source of events exposes a RESTful API (which works nicely with the  Symbiot poller). Ex: the toaster exposes an API to fetch its status; Symbiot will query <code>GET http://192.168.0.14/toaster_api/status</code> every 5 seconds and expects to receive a valid Json payload.</p>
+<p>This is how to define an API pull collector in Json:</p>
+<pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"apiPullCollector"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"My input collector"</span></span>,
+  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"This collector is pulling data from the thing (or an intermediate process)"</span></span>,
+  "<span class="hljs-attribute">frequency</span>": <span class="hljs-value"><span class="hljs-number">300</span></span>,
+  "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"http://192.168.0.14/toaster_api/status"</span></span>,
+  "<span class="hljs-attribute">method</span>": <span class="hljs-value"><span class="hljs-string">"GET"</span></span>,
+  "<span class="hljs-attribute">headers</span>": <span class="hljs-value">[
+    <span class="hljs-string">"Authorization"</span>: <span class="hljs-string">"Basic eW91QXJlQ3VyaW91czpnb29kRm9yWW91"</span>
+  ]</span>,
+  "<span class="hljs-attribute">schema</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">someString</span>" : <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[<span class="hljs-string">"someString"</span>]
+  </span>}
+</span>}
+</code></pre><p>Just as for the push collector, the <code>schema</code> node is a <a href="http://spacetelescope.github.io/understanding-json-schema/">Json Schema</a> describing the format of the data which will be pulled. It’s your job to specify the format of the data your are pulling from the endpoint configured (or at least the part that is of interest for you).</p>
+<p>Later on, when you will create inputs for this input collector in the Symbiot UI, you will have the possibility to override any of the <code>frequency</code>, <code>url</code>, <code>method</code> and <code>headers</code> fields, which define where to fetch the data from. Just consider the values defined in your Json descriptor as convenient defaults.</p>
+<h4 id="filesystem-collector">Filesystem Collector</h4>
+<p>Symbiot watches a folder in the filesystem where valid Json payloads can be dropped (or modified). This assumes that the source of events does not talk HTTP and uses the filesystem to exchange data (note that this method works nicely with FTP or a system like DropBox). Ex: a program written in C collects information from a USB toaster, converts it to Json in memory and writes it under <code>/symbiot/toasterInputs</code> (and Symbiot watches this folder).</p>
+<p>This is how to define an API pull collector in Json:</p>
+<pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"filesystemCollector"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"My input collector"</span></span>,
+  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"This collector is watching changes in a local folder"</span></span>,
+  "<span class="hljs-attribute">folder</span>": <span class="hljs-value"><span class="hljs-string">"/symbiot/toasterInputs"</span></span>,
+  "<span class="hljs-attribute">regex</span>": <span class="hljs-value"><span class="hljs-string">"*.json"</span></span>,
+  "<span class="hljs-attribute">deleteAfterRead</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+  "<span class="hljs-attribute">schema</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">someString</span>" : <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[<span class="hljs-string">"someString"</span>]
+  </span>}
+</span>}
+</code></pre><p>The <code>deleteAfterRead</code> parameter specifies if the files must be consumed (deleted upon reading) or left in the folder (and monitored for changes). And again, the <code>schema</code> node is a <a href="http://spacetelescope.github.io/understanding-json-schema/">Json Schema</a> describing the format of the data which will be pulled. It’s your job to specify the format of the data your are matching with your folder and regex (or at least the part that is of interest for you).</p>
+<p>Later on, when you will create inputs for this input collector in the Symbiot UI, you will have the possibility to override any of the <code>folder</code>, <code>regex</code> and <code>deleteAfterRead</code> fields. Just consider the values defined in your Json descriptor as convenient defaults.</p>
+<h4 id="apache-camel-collector">Apache Camel Collector</h4>
+<p>Just mentioning, that could be an interesting collector to have, pull requests are welcome ;).</p>
+<h3 id="ouput-provider">Ouput provider</h3>
+<p>(to be documented)</p>
+<h3 id="example">Example</h3>
+<p>(to be documented)</p>
+</div></div></div></div><div class="footer"><div class="container"><p><a href="https://github.com/fpoulin/symbiot-docs">symbiot-docs</a>&nbsp;- A simple Internet of Things service that runs on your machine.</p><p>Version: 0.1.0  |  Built December 2, 2014 6:21 PM</p></div></div><script type="text/javascript" src="/js/global.js"></script></body></html>
