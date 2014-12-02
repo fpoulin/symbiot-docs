@@ -1,10 +1,10 @@
 ---
-title: Understanding drivers
+title: Understand drivers
 template: layout.jade
-subsectionIndex: 2
+subsectionIndex: 7
 ---
 
-A driver describes all the possible data between Symbiot and a _thing_. It is a composition of **data collectors** and **output providers**.
+A driver describes all the possible data between Symbiot and a _thing_. It is a composition of **input collectors** and **output providers**.
 
 An **input collector** is a component of a driver responsible for handling the data flow from the _thing_ to Symbiot. A driver may define zero, one or more input collectors, depending on the _thing_ it is integrating with. For instance, a driver for a weather station may define one which fetches all the metrics of the station every 10 minutes and another one which raises an alert when the temperature climbs over a given threshold. A driver for your air conditioning system on the other hand might not define any input collector because it does not emit any data.
 
@@ -68,7 +68,7 @@ This is how to define an API pull collector in Json:
   "type": "apiPullCollector",
   "name": "My input collector",
   "description": "This collector is pulling data from the thing (or an intermediate process)",
-  "frequency": 300,
+  "frequency": 5,
   "url": "http://192.168.0.14/toaster_api/status",
   "method": "GET",
   "headers": [

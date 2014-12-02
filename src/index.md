@@ -15,6 +15,8 @@ Now imagine a world where, without writing a single line of code, you can flash 
 
 Ever tried [Zapier](https://zapier.com/) or [IFTTT](https://ifttt.com)? If not, you should, these services are great. But as great as they are, they are not completely free, they are not open-source and they don't run in the comfort of your own private network. Symbiot is free, is open-source and it runs on your machine in the blink of an eye.
 
+For more information, see the [User guides](guides).
+
 
 How does it work?
 -----------------
@@ -26,6 +28,8 @@ Symbiot is built around four simple concepts: **streams**, **drivers**, **inputs
 A **stream** is an automated communication flow between two _things_. It is nothing less than the core of Symbiot. It makes the connection between a data source (called _input_) and a target action (called _output_). You can see it as a translator between two _things_ which don't talk the same language.
 
 Configuring a **stream** consists in defining how the language of the source _thing_ must be translated to the language of the target _thing_. The good news is that you don't have to write code to do this, there is a cool Web UI for it. So if you know how to use a mouse and have elementary keyboard usage skills, you are able to tell your grandma's hearing aid device to turn off when coarse language is detected on your favourite TV program.
+
+For more information, see [Understanding streams](guides/understanding-streams/).
 
 ### Driver
 
@@ -43,6 +47,8 @@ An **input** is an entry point to Symbiot for a given driver. While a driver ena
 
 You can open more than one **input** for a given driver, each one using a different configuration. Imagine a driver for iBeacons: you might want to deploy ten iBeacons in your office space and use each of them as a separate data source. For this kind of setup you will need one iBeacons driver and ten **inputs**, each of them being configured to receive traffic from a specific iBeacon. Got it? If this is too abstract, think about a cluster of toasters (to scale-out on your breakfast as your family grows).
 
+For more information, see [Understanding inputs](guides/understanding-inputs/).
+
 **Inputs** can be created and configured from the Web UI, all you need is to have the appropriate drivers in your installation.
 
 ### Output
@@ -52,6 +58,8 @@ At this stage you should be able to guess what an **output** is. Indeed, it open
 Like for inputs, your can create more than one **output** for a given driver, each instance having its own configuration. With a single office-kitchen-display driver you can define multiple *outputs*, each one being responsible for the update of a specific metric displayed on that 102 inch display in your cool startup kitchen.
 
 Of course, **Outputs** can be created and configured from the Web UI, all you need is to have the appropriate drivers in your installation.
+
+For more information, see [Understanding outputs](guides/understanding-outputs/).
 
 
 
