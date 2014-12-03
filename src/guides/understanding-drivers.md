@@ -4,7 +4,7 @@ template: layout.jade
 subsectionIndex: 7
 ---
 
-A **driver** describes all the possible data exchanges between Symbiot and a _thing_. It is a composition of **input collectors** and **output providers**.
+This section gives you more details about drivers and their underlying components.
 
 * [Drivers](#drivers)
 * [Input collectors](#input-collectors)
@@ -15,9 +15,11 @@ A **driver** describes all the possible data exchanges between Symbiot and a _th
   * [Webhook provider](#webhook-provider)
   * [Polling provider](#polling-provider)
   * [Filesystem provider](#filesystem-provider)
-* [Example](#example)
+* [Summary](#summary)
 
 ### Drivers
+
+A driver describes all the possible interactions between Symbiot and a given _thing_. It is essentially a composition of **input collectors** and **output providers**.
 
 An **input collector** is a component of a driver responsible for handling the data flow from the _thing_ to Symbiot. A driver may define zero, one or more input collectors, depending on the _thing_ it is integrating with. For instance, a driver for a weather station may define one which fetches all the metrics of the station every 10 minutes and another one which raises an alert when the temperature climbs over a given threshold. A driver for your air conditioning system on the other hand might not define any input collector because it does not emit any data.
 
@@ -235,7 +237,6 @@ The `schema` node is a [Json Schema](http://spacetelescope.github.io/understandi
 
 Later on, when you will create outputs for this output provider in the Symbiot UI, you will have the possibility to override the `folder` parameter, if needed.
 
-### Example
+### Summary
 
-(to be added)
-
+To write a driver, you first have to identify what are the incoming data flows and the outputs, and describe their data format with a [Json Schema](http://spacetelescope.github.io/understanding-json-schema/). For each incoming data flow you have to choose one of the three collector types (push, pull or filesystem). For each output you have to choose one of the three provider types (webhook, polling or filesystem). Put all this in a nice Json file, name it something `.json` and place it in the `drivers`folder next to the Symbiot Jar file. Symbiot will automatically load your driver at startup (or complain if something's wrong).
