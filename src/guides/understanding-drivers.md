@@ -53,6 +53,7 @@ This is how to define an API push collector in Json:
 ```
 {
   "type": "apiPushCollector",
+  "id" : "my-unique-id-within-the-driver",
   "name": "My input collector",
   "description": "This collector accepts incoming data on the Symbiot API",
   "schema": {
@@ -70,7 +71,7 @@ This is how to define an API push collector in Json:
 
 The `schema` node is a [Json Schema](http://spacetelescope.github.io/understanding-json-schema/) describing the format of the data which will be posted on the API endpoint. It is very important since the very core of Symbiot relies on this data definition to help you build streams from an input to an output. That's where you have a bit of job to do: you have to formalize the format of your incoming data (or at least the part that is of interest for you) in a Json Schema. The above example describes a Json payload containing a single string node called "someString" (an example of valid payload would be `{ "someString" : "hello world" }`).
 
-Later on, when you will create inputs for this input collector in the Symbiot UI, you will be asked to provide the `inputId` which determines the endpoint where payloads need to be posted (`/inputs/{inputId}`).
+Later on, when you will create inputs for this input collector in the Symbiot UI, you will receive the `inputId` which determines the endpoint where payloads need to be posted (`/inputs/{inputId}`).
 
 #### API Pull collector
 
@@ -81,14 +82,15 @@ This is how to define an API pull collector in Json:
 ```
 {
   "type": "apiPullCollector",
+  "id" : "my-unique-id-within-the-driver",
   "name": "My input collector",
   "description": "This collector is pulling data from the thing (or an intermediate process)",
   "frequency": 5,
   "url": "http://192.168.0.14/toaster_api/status",
   "method": "GET",
-  "headers": [
+  "headers": {
     "Authorization": "Basic eW91QXJlQ3VyaW91czpnb29kRm9yWW91"
-  ],
+  },
   "schema": {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
@@ -115,6 +117,7 @@ This is how to define a filesystem collector in Json:
 ```
 {
   "type": "filesystemCollector",
+  "id" : "my-unique-id-within-the-driver",
   "name": "My input collector",
   "description": "This collector is watching changes in a local folder",
   "folder": "/symbiot/toasterInputs",
@@ -155,13 +158,14 @@ This is how to define a Webhook provider in Json:
 ```
 {
   "type": "webhookProvider",
+  "id" : "my-unique-id-within-the-driver",
   "name": "My output provider",
   "description": "This provider sends the data to an API endpoint",
   "url": "http://192.168.0.14/toaster_api/heatValue",
   "method": "POST",
-  "headers": [
+  "headers": {
     "Authorization": "Basic eW91QXJlQ3VyaW91czpnb29kRm9yWW91"
-  ],
+  },
   "schema": {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
@@ -188,6 +192,7 @@ This is how to define a Polling provider in Json:
 ```
 {
   "type": "pollingProvider",
+  "id" : "my-unique-id-within-the-driver",
   "name": "My output provider",
   "description": "This provider temporarily exposes the data as a REST resource",
   "ttl": 30,
@@ -217,6 +222,7 @@ Here is how to define a Filesystem provider in Json:
 ```
 {
   "type": "filesystemProvider",
+  "id" : "my-unique-id-within-the-driver",
   "name": "My output provider",
   "description": "This provider stores my Json payload on disk",
   "folder": "/symbiot/toasterOutputs",
