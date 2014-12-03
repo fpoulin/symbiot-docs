@@ -4,7 +4,20 @@ template: layout.jade
 subsectionIndex: 7
 ---
 
-A driver describes all the possible data exchanges between Symbiot and a _thing_. It is a composition of **input collectors** and **output providers**.
+A **driver** describes all the possible data exchanges between Symbiot and a _thing_. It is a composition of **input collectors** and **output providers**.
+
+* [Drivers](#drivers)
+* [Input collectors](#input-collectors)
+  * [API Push collector](#api-push-collector)
+  * [API Pull collector](#api-pull-collector)
+  * [Filesystem collector](#filesystem-collector)
+* [Output providers](#output-providers)
+  * [Webhook provider](#webhook-provider)
+  * [Polling provider](#polling-provider)
+  * [Filesystem provider](#filesystem-provider)
+* [Example](#example)
+
+### Drivers
 
 An **input collector** is a component of a driver responsible for handling the data flow from the _thing_ to Symbiot. A driver may define zero, one or more input collectors, depending on the _thing_ it is integrating with. For instance, a driver for a weather station may define one which fetches all the metrics of the station every 10 minutes and another one which raises an alert when the temperature climbs over a given threshold. A driver for your air conditioning system on the other hand might not define any input collector because it does not emit any data.
 
@@ -127,11 +140,11 @@ Later on, when you will create inputs for this input collector in the Symbiot UI
 Just mentioning, that could be an interesting collector to have, pull requests are welcome ;).
 
 
-### Ouput providers
+### Output providers
 
 There are different ways to let Symbiot send data to a target _thing_. As for input collectors, you will choose one or the other integration model depending on the communication capabilities of the _thing_ your driver is written for, or depending on the programming language you use for the possible intermediate system between Symbiot and the _thing_. As you will see, these are very similar to the input collectors presented above.
 
-#### Webhook Provider
+#### Webhook provider
 
 Json payloads will be pushed from Symbiot to the _thing_ (or an intermediate process) over HTTP to the provided endpoint. This assumes that the target (ex: a toaster) exposes a RESTful API or is under the control of the driver developer (ex: the developer has written a toaster driver in `Node.js` which exposes an API and somehow transmits the data to the toaster).
 
@@ -193,7 +206,7 @@ The `ttl` node allows to specify for how long (in seconds) the resource shall be
 
 Later on, when you will create outputs for this output provider in the Symbiot UI, you will have to provide the `{outputId}` used in the resource path (which dictates where your polling component needs to query the data).
 
-#### Filesystem Provider
+#### Filesystem provider
 
 Json payloads will be saved to disk in a given folder (and named after the current timestamp, with `.json` extension). Well, at this stage you should get the point: if your _thing_ or your programming language is not quite HTTP-friendly or for whatever reason you want to use the filesystem as an integration point (ex: for testing during your driver implementation), then that's how you can do it.
 
@@ -204,7 +217,7 @@ Here is how to define a Filesystem provider in Json:
   "type": "filesystemProvider",
   "name": "My output provider",
   "description": "This provider stores my Json payload on disk",
-  "folder": "/symbiot/toasterOuputs",
+  "folder": "/symbiot/toasterOutputs",
   "schema": {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
