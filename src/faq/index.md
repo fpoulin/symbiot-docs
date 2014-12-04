@@ -29,6 +29,8 @@ menuIndex: 5
 
 #### Do I have to know Json Schema to contribute?
 
+#### Does it integrate with Apache Camel?
+
 #### I have created a driver but no data is coming in
 
 #### Who is supporting Symbiot?
