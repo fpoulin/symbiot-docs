@@ -45,77 +45,98 @@
           <h1>Resources</h1>
           <hr>
           <ul class="nav subnav">
-            <li><a href="/api/reference/#myResource"><span>/myResource</span></a></li>
+            <li><a href="/api/reference/#inputs"><span>/inputs</span></a></li>
+            <li><a href="/api/reference/#outputs"><span>/outputs</span></a></li>
+            <li><a href="/api/reference/#streams"><span>/streams</span></a></li>
+            <li><a href="/api/reference/#drivers"><span>/drivers</span></a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-pull-3"><a id="top"></a>
           <h1>List of resources</h1>
           <hr>
-          <div class="page-header"><small></small><b>Endpoint: &nbsp;&nbsp;</b>https://localhost/api/v1
+          <div class="page-header"><small></small><b>Endpoint: &nbsp;&nbsp;</b>https://localhost:8080
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 id="myResource" class="panel-title">
-                /myResource
+              <h3 id="inputs" class="panel-title">
+                /inputs
                 
               </h3>
             </div>
             <div class="panel-body">
-              <div class="resource-description"><p>This is my resource.</p>
+              <div class="resource-description"><p>Input resource</p>
 </div>
               <div class="panel-group">
                 <div class="panel panel-white">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_myResource" class="block collapsed"><span id="post_myResource" class="badge badge_post">post  </span><span class="parent"></span>/myResource
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_inputs" class="block collapsed"><span id="post_inputs" class="badge badge_post">post  </span><span id="get_inputs" class="badge badge_get">get  </span><span class="parent"></span>/inputs
                         </a>
                     </h4>
                   </div>
-                  <div id="panel_myResource" class="panel-collapse collapse">
+                  <div id="panel_inputs" class="panel-collapse collapse">
                     <div class="panel-body">
                       <!-- extended "buttons" (list)-->
-                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#myResource_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p><p>Create a resource</p>
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#inputs_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p>Create an input</p>
+</span></a><a href="#" data-toggle="modal" data-target="#inputs_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get all inputs</p>
 </span></a>
                       </div>
                     </div>
                   </div>
-                  <div id="myResource_post" class="modal fade">
+                  <div id="inputs_post" class="modal fade">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/myResource</h4>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/inputs</h4>
                         </div>
                         <div class="modal-body">
                           <!-- Nav tabs-->
                           <ul class="nav nav-tabs">
-                            <li class="active"><a href="#myResource_post_description" data-toggle="tab">Description</a></li>
-                            <li><a href="#myResource_post_request" data-toggle="tab">Request</a></li>
-                            <li><a href="#myResource_post_response" data-toggle="tab">Response</a></li>
+                            <li class="active"><a href="#inputs_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#inputs_post_request" data-toggle="tab">Request</a></li>
                           </ul>
                           <!-- Tab panes-->
                           <div class="tab-content">
-                            <div id="myResource_post_description" class="tab-pane active"><span><p>Create a resource. More text is only rendered in the details view of the method.</p>
+                            <div id="inputs_post_description" class="tab-pane active"><span><p>Create an input</p>
 </span>
                             </div>
-                            <div id="myResource_post_request" class="tab-pane">
-                              <h3>Headers</h3>
-                              <ul>
-                                <li class="markdown"><strong>Authorization</strong><em> (string)</em><p>A description.</p>
-
-                                </li>
-                              </ul>
+                            <div id="inputs_post_request" class="tab-pane">
                               <h3>Body</h3>
                               <p><strong>Type: application/json</strong></p><strong>Example:</strong>
-                              <pre>{ "<span class="hljs-attribute">name</span>" : <span class="hljs-value"><span class="hljs-string">"myResource"</span> </span>}
-</pre>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
                             </div>
-                            <div id="myResource_post_response" class="tab-pane">
-                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/201" target="_blank">201</a></h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="inputs_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/inputs</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#inputs_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#inputs_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#inputs_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="inputs_get_description" class="tab-pane active"><span><p>Get all inputs</p>
+</span>
+                            </div>
+                            <div id="inputs_get_request" class="tab-pane">
+                            </div>
+                            <div id="inputs_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
                               <h3>Body</h3>
                               <p><strong>Type: application/json</strong></p><strong>Example:</strong>
-                              <pre>{ "<span class="hljs-attribute">id</span>" : <span class="hljs-value"><span class="hljs-number">1</span></span>, "<span class="hljs-attribute">name</span>" : <span class="hljs-value"><span class="hljs-string">"myResource"</span> </span>}
-</pre>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
                             </div>
                           </div>
                         </div>
@@ -126,49 +147,883 @@
                 <div class="panel panel-white">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_myResource_myResourceId" class="block collapsed"><span id="get_myResource_myResourceId" class="badge badge_get">get  </span><span class="parent">/myResource</span>/{myResourceId}
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_inputs_inputId" class="block collapsed"><span id="get_inputs_inputId" class="badge badge_get">get  </span><span id="put_inputs_inputId" class="badge badge_put">put  </span><span id="delete_inputs_inputId" class="badge badge_delete">delete  </span><span class="parent">/inputs</span>/{inputId}
                         </a>
                     </h4>
                   </div>
-                  <div id="panel_myResource_myResourceId" class="panel-collapse collapse">
+                  <div id="panel_inputs_inputId" class="panel-collapse collapse">
                     <div class="panel-body">
                       <!-- extended "buttons" (list)-->
-                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#myResource_myResourceId_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Retrieve a resource</p>
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#inputs_inputId_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get one input</p>
+</span></a><a href="#" data-toggle="modal" data-target="#inputs_inputId_put" class="list-group-item"><span class="badge badge_put">put  </span><span><p>Update an input</p>
+</span></a><a href="#" data-toggle="modal" data-target="#inputs_inputId_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p>Delete an input</p>
 </span></a>
                       </div>
                     </div>
                   </div>
-                  <div id="myResource_myResourceId_get" class="modal fade">
+                  <div id="inputs_inputId_get" class="modal fade">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/myResource</span>/{myResourceId}</h4>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/inputs</span>/{inputId}</h4>
                         </div>
                         <div class="modal-body">
                           <!-- Nav tabs-->
                           <ul class="nav nav-tabs">
-                            <li class="active"><a href="#myResource_myResourceId_get_description" data-toggle="tab">Description</a></li>
-                            <li><a href="#myResource_myResourceId_get_request" data-toggle="tab">Request</a></li>
-                            <li><a href="#myResource_myResourceId_get_response" data-toggle="tab">Response</a></li>
+                            <li class="active"><a href="#inputs_inputId_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#inputs_inputId_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#inputs_inputId_get_response" data-toggle="tab">Response</a></li>
                           </ul>
                           <!-- Tab panes-->
                           <div class="tab-content">
-                            <div id="myResource_myResourceId_get_description" class="tab-pane active"><span><p>Retrieve a resource.</p>
+                            <div id="inputs_inputId_get_description" class="tab-pane active"><span><p>Get one input</p>
 </span>
                             </div>
-                            <div id="myResource_myResourceId_get_request" class="tab-pane">
+                            <div id="inputs_inputId_get_request" class="tab-pane">
                               <h3>URI Parameters</h3>
                               <ul>
-                                <li><strong>myResourceId string</strong></li>
+                                <li><strong>inputId string</strong></li>
                               </ul>
                             </div>
-                            <div id="myResource_myResourceId_get_response" class="tab-pane">
+                            <div id="inputs_inputId_get_response" class="tab-pane">
                               <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
                               <h3>Body</h3>
                               <p><strong>Type: application/json</strong></p><strong>Example:</strong>
-                              <pre>{ "<span class="hljs-attribute">id</span>" : <span class="hljs-value"><span class="hljs-number">1</span></span>, "<span class="hljs-attribute">name</span>" : <span class="hljs-value"><span class="hljs-string">"myResource"</span> </span>}
-</pre>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="inputs_inputId_put" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_put">put  </span>&nbsp;&nbsp;<span class="parent">/inputs</span>/{inputId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#inputs_inputId_put_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#inputs_inputId_put_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#inputs_inputId_put_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="inputs_inputId_put_description" class="tab-pane active"><span><p>Update an input</p>
+</span>
+                            </div>
+                            <div id="inputs_inputId_put_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>inputId string</strong></li>
+                              </ul>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                            <div id="inputs_inputId_put_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="inputs_inputId_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/inputs</span>/{inputId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#inputs_inputId_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#inputs_inputId_delete_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#inputs_inputId_delete_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="inputs_inputId_delete_description" class="tab-pane active"><span><p>Delete an input</p>
+</span>
+                            </div>
+                            <div id="inputs_inputId_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>inputId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="inputs_inputId_delete_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer"><a href="#top" class="btn">Back to top</a></div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 id="outputs" class="panel-title">
+                /outputs
+                
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="resource-description"><p>Output resource</p>
+</div>
+              <div class="panel-group">
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_outputs" class="block collapsed"><span id="post_outputs" class="badge badge_post">post  </span><span id="get_outputs" class="badge badge_get">get  </span><span class="parent"></span>/outputs
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_outputs" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#outputs_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p>Create an output</p>
+</span></a><a href="#" data-toggle="modal" data-target="#outputs_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get all output</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="outputs_post" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/outputs</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#outputs_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#outputs_post_request" data-toggle="tab">Request</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="outputs_post_description" class="tab-pane active"><span><p>Create an output</p>
+</span>
+                            </div>
+                            <div id="outputs_post_request" class="tab-pane">
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="outputs_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/outputs</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#outputs_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#outputs_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#outputs_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="outputs_get_description" class="tab-pane active"><span><p>Get all output</p>
+</span>
+                            </div>
+                            <div id="outputs_get_request" class="tab-pane">
+                            </div>
+                            <div id="outputs_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_outputs_outputId" class="block collapsed"><span id="get_outputs_outputId" class="badge badge_get">get  </span><span id="put_outputs_outputId" class="badge badge_put">put  </span><span id="delete_outputs_outputId" class="badge badge_delete">delete  </span><span class="parent">/outputs</span>/{outputId}
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_outputs_outputId" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#outputs_outputId_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get one output</p>
+</span></a><a href="#" data-toggle="modal" data-target="#outputs_outputId_put" class="list-group-item"><span class="badge badge_put">put  </span><span><p>Update an output</p>
+</span></a><a href="#" data-toggle="modal" data-target="#outputs_outputId_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p>Delete an output</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="outputs_outputId_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/outputs</span>/{outputId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#outputs_outputId_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#outputs_outputId_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#outputs_outputId_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="outputs_outputId_get_description" class="tab-pane active"><span><p>Get one output</p>
+</span>
+                            </div>
+                            <div id="outputs_outputId_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>outputId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="outputs_outputId_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="outputs_outputId_put" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_put">put  </span>&nbsp;&nbsp;<span class="parent">/outputs</span>/{outputId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#outputs_outputId_put_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#outputs_outputId_put_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#outputs_outputId_put_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="outputs_outputId_put_description" class="tab-pane active"><span><p>Update an output</p>
+</span>
+                            </div>
+                            <div id="outputs_outputId_put_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>outputId string</strong></li>
+                              </ul>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                            <div id="outputs_outputId_put_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="outputs_outputId_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/outputs</span>/{outputId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#outputs_outputId_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#outputs_outputId_delete_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#outputs_outputId_delete_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="outputs_outputId_delete_description" class="tab-pane active"><span><p>Delete an output</p>
+</span>
+                            </div>
+                            <div id="outputs_outputId_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>outputId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="outputs_outputId_delete_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer"><a href="#top" class="btn">Back to top</a></div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 id="streams" class="panel-title">
+                /streams
+                
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="resource-description"><p>Stream resource</p>
+</div>
+              <div class="panel-group">
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_streams" class="block collapsed"><span id="post_streams" class="badge badge_post">post  </span><span id="get_streams" class="badge badge_get">get  </span><span class="parent"></span>/streams
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_streams" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#streams_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p>Create a stream</p>
+</span></a><a href="#" data-toggle="modal" data-target="#streams_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get all streams</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_post" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/streams</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_post_request" data-toggle="tab">Request</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_post_description" class="tab-pane active"><span><p>Create a stream</p>
+</span>
+                            </div>
+                            <div id="streams_post_request" class="tab-pane">
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/streams</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#streams_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_get_description" class="tab-pane active"><span><p>Get all streams</p>
+</span>
+                            </div>
+                            <div id="streams_get_request" class="tab-pane">
+                            </div>
+                            <div id="streams_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_streams_streamId" class="block collapsed"><span id="get_streams_streamId" class="badge badge_get">get  </span><span id="delete_streams_streamId" class="badge badge_delete">delete  </span><span class="parent">/streams</span>/{streamId}
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_streams_streamId" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#streams_streamId_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get one stream</p>
+</span></a><a href="#" data-toggle="modal" data-target="#streams_streamId_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p>Delete a stream</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_streamId_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/streams</span>/{streamId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_streamId_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_streamId_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#streams_streamId_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_streamId_get_description" class="tab-pane active"><span><p>Get one stream</p>
+</span>
+                            </div>
+                            <div id="streams_streamId_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>streamId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="streams_streamId_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_streamId_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/streams</span>/{streamId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_streamId_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_streamId_delete_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#streams_streamId_delete_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_streamId_delete_description" class="tab-pane active"><span><p>Delete a stream</p>
+</span>
+                            </div>
+                            <div id="streams_streamId_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>streamId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="streams_streamId_delete_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_streams_streamId_bindings" class="block collapsed"><span id="post_streams_streamId_bindings" class="badge badge_post">post  </span><span id="get_streams_streamId_bindings" class="badge badge_get">get  </span><span class="parent">/streams/{streamId}</span>/bindings
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_streams_streamId_bindings" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#streams_streamId_bindings_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p>Create a binding for the stream</p>
+</span></a><a href="#" data-toggle="modal" data-target="#streams_streamId_bindings_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get all bindings of the stream</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_streamId_bindings_post" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent">/streams/{streamId}</span>/bindings</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_streamId_bindings_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_streamId_bindings_post_request" data-toggle="tab">Request</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_streamId_bindings_post_description" class="tab-pane active"><span><p>Create a binding for the stream</p>
+</span>
+                            </div>
+                            <div id="streams_streamId_bindings_post_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>streamId string</strong></li>
+                              </ul>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_streamId_bindings_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/streams/{streamId}</span>/bindings</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_streamId_bindings_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_streamId_bindings_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#streams_streamId_bindings_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_streamId_bindings_get_description" class="tab-pane active"><span><p>Get all bindings of the stream</p>
+</span>
+                            </div>
+                            <div id="streams_streamId_bindings_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>streamId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="streams_streamId_bindings_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The stream was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_streams_streamId_bindings_bindingId" class="block collapsed"><span id="get_streams_streamId_bindings_bindingId" class="badge badge_get">get  </span><span id="put_streams_streamId_bindings_bindingId" class="badge badge_put">put  </span><span id="delete_streams_streamId_bindings_bindingId" class="badge badge_delete">delete  </span><span class="parent">/streams/{streamId}/bindings</span>/{bindingId}
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_streams_streamId_bindings_bindingId" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#streams_streamId_bindings_bindingId_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get one binding of the stream</p>
+</span></a><a href="#" data-toggle="modal" data-target="#streams_streamId_bindings_bindingId_put" class="list-group-item"><span class="badge badge_put">put  </span><span><p>Update a binding of the stream</p>
+</span></a><a href="#" data-toggle="modal" data-target="#streams_streamId_bindings_bindingId_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p>Delete a binding of the stream</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_streamId_bindings_bindingId_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/streams/{streamId}/bindings</span>/{bindingId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_streamId_bindings_bindingId_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_streamId_bindings_bindingId_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#streams_streamId_bindings_bindingId_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_streamId_bindings_bindingId_get_description" class="tab-pane active"><span><p>Get one binding of the stream</p>
+</span>
+                            </div>
+                            <div id="streams_streamId_bindings_bindingId_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>streamId string</strong></li>
+                                <li><strong>bindingId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="streams_streamId_bindings_bindingId_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource or stream was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_streamId_bindings_bindingId_put" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_put">put  </span>&nbsp;&nbsp;<span class="parent">/streams/{streamId}/bindings</span>/{bindingId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_streamId_bindings_bindingId_put_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_streamId_bindings_bindingId_put_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#streams_streamId_bindings_bindingId_put_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_streamId_bindings_bindingId_put_description" class="tab-pane active"><span><p>Update a binding of the stream</p>
+</span>
+                            </div>
+                            <div id="streams_streamId_bindings_bindingId_put_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>streamId string</strong></li>
+                                <li><strong>bindingId string</strong></li>
+                              </ul>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                            <div id="streams_streamId_bindings_bindingId_put_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="streams_streamId_bindings_bindingId_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/streams/{streamId}/bindings</span>/{bindingId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#streams_streamId_bindings_bindingId_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#streams_streamId_bindings_bindingId_delete_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#streams_streamId_bindings_bindingId_delete_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="streams_streamId_bindings_bindingId_delete_description" class="tab-pane active"><span><p>Delete a binding of the stream</p>
+</span>
+                            </div>
+                            <div id="streams_streamId_bindings_bindingId_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>streamId string</strong></li>
+                                <li><strong>bindingId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="streams_streamId_bindings_bindingId_delete_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer"><a href="#top" class="btn">Back to top</a></div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 id="drivers" class="panel-title">
+                /drivers
+                
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="resource-description"><p>Driver resource</p>
+</div>
+              <div class="panel-group">
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_drivers" class="block collapsed"><span id="get_drivers" class="badge badge_get">get  </span><span class="parent"></span>/drivers
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_drivers" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#drivers_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get all drivers</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="drivers_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/drivers</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#drivers_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#drivers_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#drivers_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="drivers_get_description" class="tab-pane active"><span><p>Get all drivers</p>
+</span>
+                            </div>
+                            <div id="drivers_get_request" class="tab-pane">
+                            </div>
+                            <div id="drivers_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_drivers_driverId" class="block collapsed"><span id="get_drivers_driverId" class="badge badge_get">get  </span><span class="parent">/drivers</span>/{driverId}
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_drivers_driverId" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#drivers_driverId_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p>Get one driver</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="drivers_driverId_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/drivers</span>/{driverId}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#drivers_driverId_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#drivers_driverId_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#drivers_driverId_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="drivers_driverId_get_description" class="tab-pane active"><span><p>Get one driver</p>
+</span>
+                            </div>
+                            <div id="drivers_driverId_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>driverId string</strong></li>
+                              </ul>
+                            </div>
+                            <div id="drivers_driverId_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-list">(<span class="hljs-keyword">soon</span>)</span></pre>
                               <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
 
                             </div>
@@ -188,7 +1043,7 @@
     <div class="footer">
       <div class="container">
         <p><a href="https://github.com/fpoulin/symbiot-docs">symbiot-docs</a>&nbsp;- A simple Internet of Things service that runs on your machine.</p>
-        <p>Version: 0.1.0  |  Built December 4, 2014 1:40 PM</p>
+        <p>Version: 0.1.0  |  Built December 4, 2014 7:59 PM</p>
       </div>
     </div>
     <script type="text/javascript" src="/js/global.js"></script>
