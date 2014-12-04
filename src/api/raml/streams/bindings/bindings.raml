@@ -1,0 +1,50 @@
+description: Binding resource
+post:
+  description: Create a binding for the stream
+  body:
+    application/json:
+      example: (soon)
+
+get:
+  description: Get all bindings of the stream
+  responses:
+    200:
+      body:
+        application/json:
+          example: (soon)
+    404:
+      description: The stream was not found.
+
+/{bindingId}:
+  get:
+    description: Get one binding of the stream
+    responses:
+      200:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource or stream was not found.
+
+  put:
+    description: Update a binding of the stream
+    body:
+      application/json:
+        example: (soon)
+    responses:
+      204:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.
+
+  delete:
+    description: Delete a binding of the stream
+    responses:
+      204:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.

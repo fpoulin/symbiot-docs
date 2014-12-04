@@ -1,0 +1,48 @@
+description: Input resource
+post:
+  description: Create an input
+  body:
+    application/json:
+      example: (soon)
+
+get:
+  description: Get all inputs
+  responses:
+    200:
+      body:
+        application/json:
+          example: (soon)
+
+/{inputId}:
+  get:
+    description: Get one input
+    responses:
+      200:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.
+
+  put:
+    description: Update an input
+    body:
+      application/json:
+        example: (soon)
+    responses:
+      204:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.
+
+  delete:
+    description: Delete an input
+    responses:
+      204:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.

@@ -1,0 +1,48 @@
+description: Output resource
+post:
+  description: Create an output
+  body:
+    application/json:
+      example: (soon)
+
+get:
+  description: Get all output
+  responses:
+    200:
+      body:
+        application/json:
+          example: (soon)
+
+/{outputId}:
+  get:
+    description: Get one output
+    responses:
+      200:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.
+
+  put:
+    description: Update an output
+    body:
+      application/json:
+        example: (soon)
+    responses:
+      204:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.
+      
+  delete:
+    description: Delete an output
+    responses:
+      204:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.

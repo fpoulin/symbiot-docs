@@ -1,7 +1,7 @@
 #%RAML 0.8
 ---
-title: API Resource Example
-baseUri: https://localhost/api/{version}
+title: Symbiot API
+baseUri: https://localhost:8080
 version: v1
 protocols: [HTTPS]
 mediaType: application/json
@@ -9,51 +9,7 @@ mediaType: application/json
 traits:
   - private: !include _traits/private.raml
 
-/myResource:
-  description: This is my resource.
-  post:
-    description: Create a resource. More text is only rendered in the details view of the method.
-    body:
-      application/json:
-        example: |
-          { "name" : "myResource" }
-    responses:
-      201:
-        body:
-          application/json:
-            example: |
-              { "id" : 1, "name" : "myResource" }
-    headers:
-      Authorization:
-        description: |
-          A description.
-          <private>
-          Note that you can also add `<private>` blocks in here.
-          </private>
-
-  /{myResourceId}:
-    get:
-      description: Retrieve a resource.
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                { "id" : 1, "name" : "myResource" }
-        404:
-          description: The resource was not found.
-    delete:
-      is: [private]
-      description: Delete a resource.
-
-/adminResource:
-  is: [private]
-  description: This is a private resource.
-  get:
-    description: Get secret message.
-    responses:
-      200:
-        body:
-          application/json:
-            example: |
-              {"secret" : "message"}
+/inputs: !include inputs/inputs.raml
+/outputs: !include outputs/outputs.raml
+/streams: !include streams/streams.raml
+/drivers: !include drivers/drivers.raml

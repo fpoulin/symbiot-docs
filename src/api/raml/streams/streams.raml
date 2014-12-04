@@ -1,0 +1,37 @@
+description: Stream resource
+post:
+  description: Create a stream
+  body:
+    application/json:
+      example: (soon)
+
+get:
+  description: Get all streams
+  responses:
+    200:
+      body:
+        application/json:
+          example: (soon)
+
+/{streamId}:
+  get:
+    description: Get one stream
+    responses:
+      200:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.
+
+  delete:
+    description: Delete a stream
+    responses:
+      204:
+        body:
+          application/json:
+            example: (soon)
+      404:
+        description: The resource was not found.
+
+  /bindings: !include bindings/bindings.raml
