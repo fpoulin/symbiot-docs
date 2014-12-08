@@ -1,0 +1,17 @@
+extends layout
+
+block canvas
+	.container
+		.row
+			.col-sm-3.col-sm-push-9
+			.col-sm-9.col-sm-pull-3.drawing
+				- var n=0
+				while n++ < 17 
+					img(src="img/"+n+".png", id="thing"+n)
+				canvas(id="symbiotCanvas" class="canvas" width="600" height="300")
+
+block moreJsLibs
+	script(type="text/javascript" src="/js/paper-full.min.js")
+
+block moreLibs
+	script(type="text/paperscript" src="/paper/symbiotCanvasScript.js" canvas="symbiotCanvas")

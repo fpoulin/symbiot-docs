@@ -1,7 +1,7 @@
 ---
 title: Understand drivers
 template: layout.jade
-subsectionIndex: 7
+subsectionIndex: 5
 ---
 
 This section gives you more details about drivers and their underlying components.
