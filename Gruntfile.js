@@ -194,7 +194,8 @@ module.exports = function (grunt) {
 						'build/js/jquery.min.js',
 						'build/js/bootstrap.js',
 						'build/js/smoothscroll.js',
-						'build/js/app.js'
+						'build/js/app.js',
+						'build/js/paper-full.min.js'
 					],
 					dest: 'build/js/global.js'
 				}]
