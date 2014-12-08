@@ -64,6 +64,12 @@ a.github-ribbon img {
   font-size: 12px;
   margin-left: 6px;
 }
+.drawing img {
+  display: none;
+}
+.drawing canvas {
+  background-color: #fff;
+}
 @media (max-width: 768px) {
   .row .private {
     margin-left: 0;
@@ -75,6 +81,9 @@ a.github-ribbon img {
     height: 30px;
   }
   a.github-ribbon img {
+    display: none;
+  }
+  .drawing > canvas {
     display: none;
   }
 }

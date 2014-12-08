@@ -18,4 +18,3 @@ $(window).load(function() {
   	$(this).attr("class", "glyphicon glyphicon-" + icons[Math.floor(Math.random()*icons.length)]);
   })
 });
-
